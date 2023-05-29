@@ -1,0 +1,34 @@
+name: Build and test Python package
+on: push
+
+jobs:
+  build-n-test:
+    name: Build and test Python package
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        pip install pytest
+        pip install black
+        pip install -r requirements.txt
+
+    - name: Lint with black
+      run: |
+        python3 -m black --check .
+        
+    - name: Run tests with pytest
+      if: test -d tests
+      run: |
+        python3 -m pytest
