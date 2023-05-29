@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exchange.py"
+description = "An async API wrapper for the Stack Exchange API."
+requires-python = ">=3.9.0"
+license = { text="MIT License" }
+authors = [{ name="Senev" }]
+keywords = ["stackexchange", "api", "wrapper", "async", "library", "python"]
+packages = ["exchange"]
+classifiers=[
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.9+",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Libraries",
+]
+dynamic = ["version", "readme", "dependencies"]
+
+[project.optional-dependencies]
+docs = [
+    "sphinx",
+    "sphinxcontrib_trio",
+    "sphinx_rtd_theme",
+]
+
+[project.urls]
+Repository = "https://github.com/senev3141/exchange.py"
+Documentation = "https://exchangepy.readthedocs.io/en/latest/"
+Issue_Tracker = "https://github.com/senev3141/exchange.py/issues"
+
+[tool.setuptools.dynamic]
+version = { attr="exchange.__version__" }
+dependencies = { file=["requirements.txt"] }
+readme = { file="README.rst" }
