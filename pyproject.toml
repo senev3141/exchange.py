@@ -11,10 +11,12 @@ authors = [{ name="Senev" }]
 keywords = ["stackexchange", "api", "wrapper", "async", "library", "python"]
 classifiers=[
     "Development Status :: 3 - Alpha",
-    "Programming Language :: Python :: 3.9+",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Topic :: Software Development :: Libraries",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
 ]
 dynamic = ["version", "readme", "dependencies"]
 
