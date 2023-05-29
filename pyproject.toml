@@ -9,7 +9,6 @@ requires-python = ">=3.9.0"
 license = { text="MIT License" }
 authors = [{ name="Senev" }]
 keywords = ["stackexchange", "api", "wrapper", "async", "library", "python"]
-packages = ["exchange"]
 classifiers=[
     "Development Status :: 3 - Alpha",
     "Programming Language :: Python :: 3.9+",
@@ -30,6 +29,9 @@ docs = [
 Repository = "https://github.com/senev3141/exchange.py"
 Documentation = "https://exchangepy.readthedocs.io/en/latest/"
 Issue_Tracker = "https://github.com/senev3141/exchange.py/issues"
+
+[tool.setuptools]
+packages = ["exchange"]
 
 [tool.setuptools.dynamic]
 version = { attr="exchange.__version__" }
